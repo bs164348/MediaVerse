@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <title>MediaVerse</title>
+    <header>
+      <img class="logo" src="/assets/logo2_transparent.png" alt="logo" />
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/shop.html">Shop</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
+  </head>
+  <body>
+    <main>
+        <div id="map" aria-label="Locaties op de kaart"></div>
+      <form>
+        <input type="text" id="name" placeholder="Naam" required/>
+
+        <input type="email" id="mail" placeholder="E-mailadres" required />
+
+        <label for="dropdown">Contact opnemen met:</label>
+        <select name="dropdown" id="dropdown">
+        <option value="webdev">Web Developer</option>
+        <option value="webman">Webshop Manager</option>
+        </select>
+
+        <textarea id="message" name="message" placeholder="Uw vraag..." rows="4" required></textarea>
+
+        <input type="submit" id="submit" >
+      </form>
+    </main>
+
+    <script>
+      const imageWidth = 4096;
+      const imageHeight = 4096;
+    
+      const map = L.map('map', {
+        crs: L.CRS.Simple,
+        minZoom: -2,
+        maxZoom: 2
+      });
+    
+      const bounds = [[0, 0], [imageHeight, imageWidth]];
+    
+      L.imageOverlay('/assets/map.png', bounds).addTo(map);
+    
+      map.fitBounds(bounds);
+
+      L.marker([2120, 2525]).addTo(map)
+        .bindPopup('MediaVerse HQ');
+        L.marker([1500, 2200]).addTo(map)
+        .bindPopup('MediaVerse Pop-Up Store');
+    </script>
+    
+    <footer>&copy; MediaVerse</footer>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #f3e3c3;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: small;
+}
+
+.logo {
+  width: 100px;
+  height: 65px;
+}
+
+h1 {
+  font-size: 25px;
+  margin: 10px;
+}
+
+h2 {
+  margin: 10px;
+}
+
+.bestsellers {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+}
+
+/* BACKGROUNDS BESTSELLERS */
+
+.bestseller-cd {
+  background-image: url(/assets/yeezus.jpg);
+}
+
+.bestseller-vhs {
+  background-image: url(/assets/scarface.jpg);
+}
+
+.bestseller-game {
+  background-image: url(/assets/kingdomHearts.jpg);
+}
+
+.bestseller {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  background-color: whitesmoke;
+  align-self: center;
+  margin: 75%;
+  padding: 15px;
+  border-radius: 5px;
+  width: 75%;
+  padding-bottom: 1px;
+}
+
+.bestseller-name {
+  text-align: left;
+  font-weight: bold;
+  font-size: 19.2px;
+  color: #8c3424;
+}
+
+.bestseller-info {
+  text-align: left;
+  color: #d46a3e;
+}
+
+.bestseller-price {
+  position: relative;
+  top: -50px;
+  text-align: right;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background-color: #2a8a8a;
+  border-color: #2a8a8a;
+  padding: 10px;
+  margin: 35%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+
+.bio {
+  background-color: whitesmoke;
+  padding: 20px;
+  margin: 50px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  border-color: #2a8a8a;
+  border-style: groove;
+}
+
+.bio-pic {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.bio-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .desktop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 60px;
+    margin: auto;
+    align-items: start;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 60px;
+    text-align: left;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    font-size: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .shop-name {
+    order: 1;
+  }
+  .description {
+    order: 2;
+  }
+  .button {
+    order: 3;
+  }
+  .bio-desktop {
+    order: 4;
+  }
+
+  .shop-name {
+    font-size: 52px;
+    margin: 0;
+    grid-area: shopname;
+  }
+
+  .description {
+    text-align: left;
+    font-size: 20px;
+    max-width: 400px;
+    grid-area: description;
+  }
+
+  .button {
+    width: 200px;
+    font-size: 18px;
+    margin: 0;
+    grid-area: button;
+  }
+
+  article {
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+  }
+
+  .bestsellers {
+    display: grid;
+    grid-template-areas:
+      "cd vhs"
+      "cd game";
+    gap: 25px;
+  }
+
+  .bestseller {
+    margin: 65%;
+    padding-bottom: 1px;
+  }
+
+  .bestseller-cd {
+    grid-area: cd;
+  }
+  .bestseller-vhs {
+    grid-area: vhs;
+  }
+  .bestseller-game {
+    grid-area: game;
+  }
+  .bio-desktop {
+    background-color: whitesmoke;
+    padding: 25px;
+    margin: 50px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    border-color: #2a8a8a;
+    border-style: groove;
+  }
+
+  .bio-pic-desktop {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 50px;
+  }
+
+  .bio-desktop {
+    display: flex;
+  }
+  .bio {
+    display: none;
+  }
+
+  .our-bestsellers {
+    display: none;
+  }
+}
